@@ -1,7 +1,7 @@
 name: FormatCodeAndShowDiff
 on:
   push:
-    branches: [main]
+    branches: [fix_gh_action]
   pull_request:
     branches: [main]
 
@@ -14,6 +14,7 @@ jobs:
         with:
           # Make sure the actual branch is checked out when running on pull requests
           ref: ${{ github.head_ref }}
+          token: ${{ github.token }}
 
       - name: Get yarn cache directory
         id: yarn
